@@ -1,8 +1,6 @@
 
 $(document).ready(function () {
 
-   
-
     // on page load
     doInit();
 
@@ -32,30 +30,30 @@ $(document).ready(function () {
     function retrieveDescriptions() {
 
         // get array of our description elements 
-        const descritpions = $(".description");
+        const descriptions = $(".description");
         
-        $(descritpions).each(function(i, element) {
+        $(descriptions).each(function(i, element) {
 
             // get time ID so we can retrieve data from local storage 
             const timeId = $(element).attr("data-time");
 
             // get unique description per element 
-            const descritpion = localStorage.getItem(timeId);
+            const descriptions = localStorage.getItem(timeId);
 
             // set the text
-            $(element).text(descritpion); 
+            $(element).text(descriptions); 
         })
 
     }
 
-    function pastPresentFuture( {
+    function pastPresentFuture() {
         // get current hour
         const currentHour = moment().hours();
 
         // target our descritpion tag
-        const descritpion = $(".description");
+        const descriptions = $(".description");
 
-        $(descritpions).each(function (index, element) {
+        $(descriptions).each(function (index, element) {
             // get the current time that is stored on the descriptioin block
         const currentTimeOfBlock = parseInt($(element).attr("data-time"));
 
